@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Lab02 {
     
-    private static final boolean menuState = false;
+    private static boolean menuState = false;
     
     public static void main(String[] args) throws FileNotFoundException {
         FoodItem[] menu = new FoodItem[4];
@@ -26,9 +26,12 @@ public class Lab02 {
                 case 3:
                     CheckOut.menu(menu);
                     break;
-                  
+                case 4:
+                    menuState = true;
+                    break;
             }
         }
+        System.exit(0);
     }
 
     private static int menu() {
@@ -37,7 +40,8 @@ public class Lab02 {
         System.out.println("What would you like to do?\n\n"
                 + "1. Add Order\n"
                 + "2. Remove Order\n"
-                + "3. Checkout");
+                + "3. Checkout\n"
+                + "4. Shutdown");
         System.out.println("=====================================\n");
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter a order number!");
@@ -46,7 +50,8 @@ public class Lab02 {
         return userChoice;
     }
 
-    private static void loadMenu(FoodItem[] menu) throws FileNotFoundException {
+    private static void loadMenu(FoodItem[] menu) 
+            throws FileNotFoundException {
         File file = new File("foodItems.txt");
         Scanner input = new Scanner(file);
         
@@ -73,7 +78,10 @@ public class Lab02 {
                     + "================================");
             for(int item = 0; item < 4; item++){
                 if(menu[item].GetQuantity() != 0){
-                    System.out.println(item + ". " + menu[item].GetDescription() + " - " + menu[item].GetQuantity() + " meals for $" + menu[item].GetExtendedCost());
+                    System.out.println(item + ". " + 
+                            menu[item].GetDescription() + " - " + 
+                            menu[item].GetQuantity() + " meals for $" + 
+                            menu[item].GetExtendedCost());
                 }    
             }
             System.out.println("================================");

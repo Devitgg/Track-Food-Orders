@@ -43,7 +43,8 @@ class CheckOut {
 
     private static void confirm() {
         String userChoice;
-        System.out.println("Please read order summary to customer, confirm order and take payment");
+        System.out.println("Please read order summary to customer, "
+                + "confirm order and take payment");
         System.out.println("Hit any key to confirm ¯\\_(ツ)_/¯");
         Scanner sc = new Scanner(System.in);
         userChoice = sc.nextLine();

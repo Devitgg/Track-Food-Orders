@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class RemoveOrder {
 
     public static void menu(FoodItem[] menu) {
-        
-        
         int userChoice;
         String choice;
         
@@ -36,7 +34,8 @@ public class RemoveOrder {
         System.out.println("\n\n=====================================");
         System.out.println("Please select an menu item:\n");
         for(int item = 0; item < 4; item++){
-            System.out.println((item + 1) + ". " + menu[item].GetDescription() + " | $" + menu[item].GetPrice());
+            System.out.println((item + 1) + ". " + menu[item].GetDescription()
+                    + " | $" + menu[item].GetPrice());
         }
         System.out.println("=====================================\n");    
         Scanner sc = new Scanner(System.in);

@@ -42,7 +42,9 @@ public class FoodItem {
     }
     
     public void DisplayFoodItemSummary(){
-        System.out.println(GetQuantity() + "  " + GetPrice() + "  " + GetExtendedCost() + "  " + GetDescription());
-        
+        System.out.println(GetQuantity() + "  " + 
+                GetPrice() + "  " + 
+                GetExtendedCost() + "  " + 
+                GetDescription());      
     }
 }
